@@ -31,5 +31,32 @@
             <param name="nationalParkId">Введите ID национального парка для его обновления</param>
             <returns></returns>
         </member>
+        <member name="M:ParkyAPI.Controllers.TrailsController.GetTrails">
+            <summary>
+            Вывод всех тропинок парка
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParkyAPI.Controllers.TrailsController.GetTrails(System.Int32)">
+            <summary>
+            Вывод нужной тропинки по её ID 
+            </summary>
+            <param name="trailId">Ввод ID трапинки парка</param>
+            <returns></returns>
+        </member>
+        <member name="M:ParkyAPI.Controllers.TrailsController.CreateTrail(ParkyAPI.Models.Dtos.TrailDto)">
+            <summary>
+            Создание новых данных для тропинок парка
+            </summary>
+            <param name="trailDto">Введите нужные данные</param>
+            <returns></returns>
+        </member>
+        <member name="M:ParkyAPI.Controllers.TrailsController.UpdateTrail(System.Int32,ParkyAPI.Models.Dtos.TrailDto)">
+            <summary>
+            Обновление данных выбранной тропинки
+            </summary>
+            <param name="trailId">Введите ID тропинки парка для её обновления</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
