@@ -1,3 +1,4 @@
+using System.Reflection;
 using ParkyAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using ParkyAPI.Models.ParkyMapper;
@@ -18,7 +19,12 @@ builder.Services.AddAutoMapper(typeof(ParkyMappings));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var fullXmlPath = $"{Path.Combine(AppContext.BaseDirectory, xmlCommentFile)}";
+   options.IncludeXmlComments(fullXmlPath);
+});
 
 var app = builder.Build();
 
